@@ -6,9 +6,11 @@ pipeline{
 
               stage('Build and push to nexus'){
                   steps {
-                         withMaven(maven: 'maven3') {
-              			 sh "mvn clean install"
+			  script {
+				  withMaven(maven: 'maven3') {
+              			                   sh "mvn clean install"
 					 }
+			  }
               	        }  
               }	
 	   
